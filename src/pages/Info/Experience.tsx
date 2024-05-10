@@ -38,7 +38,7 @@ const Experience = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       {experience.map((exp) => (
-        <div className="my-5 flex justify-between w-full p-10 ">
+        <div className="my-5 flex justify-between w-full p-10" key={exp.title}>
           <h2 className=" drop-shadow-glowLight text-3xl">{exp.title}</h2>
 
           <div className="w-[400px]">

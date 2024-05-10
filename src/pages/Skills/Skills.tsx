@@ -116,6 +116,7 @@ const Skills = () => {
         <div>
           {credentials.map((c) => (
             <div
+              key={c.title}
               className="flex border border-gray-800 pr-14 rounded-lg justify-between items-center my-5 p-5 group hover:drop-shadow-glow cursor-pointer transition-all duration-300"
               onClick={() => window.open(c.link, "_blank")}
             >
