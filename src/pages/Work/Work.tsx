@@ -44,11 +44,11 @@ const Work = () => {
   ];
 
   return (
-    <div className="w-[90%] p-10">
-      <div className="text-center font-poly drop-shadow-glow text-8xl">
+    <div className="md:w-[90%] w-[90vw] md:py-10 md:p-10">
+      <div className="text-center text-5xl font-poly drop-shadow-glow md:text-8xl">
         <h1>
           I craft digital experiences that people{" "}
-          <span className=" text-8xl font-gloock italic drop-shadow-none bg-gradient-to-b from-[#ffffff6e] via-[#d8d9d8bc] to-[#101010] text-transparent bg-clip-text">
+          <span className=" md:text-8xl font-gloock italic drop-shadow-none bg-gradient-to-b from-[#ffffff6e] via-[#d8d9d8bc] to-[#101010] text-transparent bg-clip-text">
             love.
           </span>
         </h1>
@@ -59,15 +59,15 @@ const Work = () => {
 
       <div className="mt-20"></div>
 
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col md:gap-5 w-full">
         {work.map((w) => (
           <div
             key={w.name}
-            className="bg-gradient-to-r from-[#252524]  via-[#ffffff92] to-[#252524] p-[1px] rounded-3xl mt-10 cursor-pointer group "
+            className="bg-gradient-to-r from-[#252524] w-full via-[#ffffff92] to-[#252524] p-[1px] rounded-3xl mt-5 md:mt-10 cursor-pointer group "
             onClick={() => window.open(w.link)}
           >
-            <div className=" bg-gradient-to-b h-[75vh] from-[#222323] to-[#151515] rounded-3xl p-10 overflow-hidden duration-300 transition-all">
-              <div className="flex justify-between">
+            <div className=" bg-gradient-to-b md:h-[75vh] from-[#222323] to-[#151515] flex-col md:flex-row rounded-3xl p-7 md:p-10 overflow-hidden duration-300 transition-all">
+              <div className="flex md:justify-between md:flex-row flex-col-reverse">
                 <div>
                   <h2 className="text-2xl">{w.name}</h2>
                   <p className="text-gray-500 text-sm">
@@ -77,7 +77,7 @@ const Work = () => {
                 </div>
 
                 {w.link && (
-                  <FaArrowRight className=" group-hover:translate-x-2 transition-all duration-500 ease-in-out" />
+                  <FaArrowRight size={20} className="mb-5 self-end md:self-auto md:mb-0 md:w-auto group-hover:translate-x-2 transition-all duration-500 ease-in-out" />
                 )}
               </div>
 
@@ -85,7 +85,7 @@ const Work = () => {
                 <img
                   src={w.image}
                   alt={w.name}
-                  className="w-[90%] mt-20 rounded-3xl group-hover:mt-10 transition-all duration-500 ease-in-out"
+                  className="md:w-[90%] mt-5 md:mt-20 rounded-3xl group-hover:mt-10 transition-all duration-500 ease-in-out"
                 />
               </div>
             </div>

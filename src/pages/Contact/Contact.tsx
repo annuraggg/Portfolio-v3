@@ -72,8 +72,8 @@ const Contact = () => {
   };
 
   return (
-    <div className="" id="mainContact">
-      <h1 className="text-7xl drop-shadow-glow font-poly ">
+    <div className="md:w-auto w-[85vw]" id="mainContact">
+      <h1 className="md:text-7xl text-3xl drop-shadow-glow font-poly">
         Get in Touch{" "}
         <span className="font-gloock italic bg-gradient-to-b from-[#ffffff6e] via-[#d8d9d8bc] to-[#10101000] text-transparent bg-clip-text">
           With Me.
@@ -91,12 +91,12 @@ const Contact = () => {
           contact@anuragsawant.in
         </p>
 
-        <form action="" className="mt-5">
+        <form action="" className="mt-5 md:w-auto w-[85vw]">
           <div className="flex">
             <input
               type="text"
               placeholder="Name"
-              className="border-b-4 rounded-lg border border-gray-500 p-2 m-2 bg-transparent"
+              className="border-b-4 rounded-lg border border-gray-500 p-2 m-2 bg-transparent w-[50%]"
               onChange={(e) => {
                 setName(e.target.value);
               }}
@@ -105,7 +105,7 @@ const Contact = () => {
             <input
               type="email"
               placeholder="Email"
-              className="border-b-4 rounded-lg border border-gray-500 p-2 m-2 bg-transparent"
+              className="border-b-4 rounded-lg border border-gray-500 p-2 m-2 bg-transparent w-[50%]"
               onChange={(e) => {
                 setEmail(e.target.value);
               }}

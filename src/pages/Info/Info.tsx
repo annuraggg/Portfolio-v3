@@ -9,11 +9,11 @@ const signStyle = {
 
 const Info = () => {
   return (
-    <div className="w-[70%] mt-16">
+    <div className="md:w-[70%] w-[85vw] md:mt-16">
       <p className="text-sm font-poly text-gray-500 drop-shadow-glow tracking-wide">
         ABOUT ME
       </p>
-      <h1 className=" drop-shadow-glow text-5xl font-poly mt-5">
+      <h1 className=" drop-shadow-glow md:text-5xl text-3xl font-poly mt-5">
         “Coding to me, isn't just a skill; it's my language of expression, a
         medium to{" "}
         <span className=" font-gloock italic bg-gradient-to-b from-[#ffffff6e] via-[#e2e2e2bc] to-[#e8e8e8a2] text-transparent bg-clip-text">
@@ -30,7 +30,7 @@ const Info = () => {
         </p>
       </div>
       <div className="">
-        <div className="flex items-center justify-between w-full">
+        <div className="flex flex-col md:flex-row items-center justify-between w-full">
           <div>
             <img
               src="./logoicon.png"
@@ -39,11 +39,11 @@ const Info = () => {
                 e.currentTarget.classList.remove("hover:invert-[0.2]");
                 e.currentTarget.classList.add("invert", "animate__hinge");
               }}
-              className="w-64 d mt-10 hover:invert-[0.2] cursor-pointer transition-all duration-300  animate__animated"
+              className="md:w-64 w-24 d mt-10 hover:invert-[0.2] cursor-pointer transition-all duration-300  animate__animated"
             />
           </div>
 
-          <div className="w-[60%] mt-10">
+          <div className="w-[100%] md:w-[60%] mt-10">
             <p className="text-lg">My Background</p>
             <p className="text-gray-500 mt-2">
               In July 2022, I completed My Diploma in IT from Vidyalankar
@@ -70,11 +70,11 @@ const Info = () => {
         </div>
       </div>
 
-      <div className="mt-20 w-full">
-        <h1 className="font-poly text-7xl text-center bg-gradient-to-b from-[#ffffff6e] via-[#686868] to-[#101010] text-transparent bg-clip-text">
+      <div className="mt-20">
+        <h1 className="font-poly text-3xl md:text-7xl text-center bg-gradient-to-b from-[#ffffff6e] via-[#686868] to-[#101010] text-transparent bg-clip-text">
           EXPERIENCE
         </h1>
-        <div className="mt-10 w-full">
+        <div className="mt-10">
           <Experience />
         </div>
       </div>

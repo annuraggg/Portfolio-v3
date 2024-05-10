@@ -21,7 +21,7 @@ function App() {
     <div data-scroll-container data-scroll>
       <Navbar active={active} setActive={(index) => changeTab(index)} />
       <GlowEffect />
-      <div className="w-full h-full flex justify-center flex-col items-center px-28 pt-28">
+      <div className="w-full h-full flex justify-center flex-col items-center px-28 md:pt-28 pt-16 md:mb-0 mb-16">
         {active === 0 && <Work />}
         {active === 1 && <Info />}
         {active === 2 && <Skills />}

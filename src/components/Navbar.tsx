@@ -1,6 +1,9 @@
-import { RxArrowTopRight } from "react-icons/rx";
+import { RxArrowTopRight, RxCross2 } from "react-icons/rx";
 import { LuGithub, LuLinkedin, LuInstagram } from "react-icons/lu";
 import JSConfetti from "js-confetti";
+import Resume from "../documents/resume.pdf";
+import { IoMdMenu } from "react-icons/io";
+import { useState } from "react";
 
 const Navbar = ({
   active,
@@ -32,7 +35,7 @@ const Navbar = ({
     },
     {
       name: "Resume",
-      url: "https://www.linkedin.com/in/annuraggg",
+      url: Resume,
     },
     {
       name: "Blog",
@@ -40,23 +43,24 @@ const Navbar = ({
     },
   ];
 
+  const [showSmallMenu, setShowSmallMenu] = useState(false);
+
   const jsConfetti = new JSConfetti();
   const throwConfetti = () => {
     jsConfetti.addConfetti({
       confettiColors: ["#101010", "#1C1C1C", "#ffffff6e"],
     });
   };
-  
 
   return (
-    <div className="px-10 py-5 flex items-center justify-between fixed w-full z-50">
+    <div className="px-10 py-5 flex items-center justify-between md:fixed w-full z-50">
       <div className="flex gap-5 items-center w-full">
         <img
           src="logoicon.png"
-          className="w-8 invert cursor-pointer"
+          className="md:w-8 w-4 invert cursor-pointer mr-10"
           onClick={throwConfetti}
         />
-        <div>
+        <div className="hidden md:block">
           <p className="text-lg">Anurag Sawant</p>
           <p className="text-xs text-gray-400">Full Stack Dev.</p>
         </div>
@@ -64,7 +68,7 @@ const Navbar = ({
 
       <MiddleBar active={active} setActive={(index) => setActive(index)} />
 
-      <div className="flex gap-5">
+      <div className="gap-1 md:gap-5 hidden md:flex">
         {links.map((link) => (
           <div
             onClick={() => window.open(link.url, "_blank")}
@@ -81,6 +85,55 @@ const Navbar = ({
             )}
           </div>
         ))}
+      </div>
+
+      {showSmallMenu && (
+        <div className="left-0 fixed bottom-0 bg-[#101010] z-50 w-full h-full px-10 py-5 animate__animated animate__fadeInDown ">
+          <div className="flex justify-between">
+            <div className="flex gap-5 items-center w-full">
+              <img
+                src="logoicon.png"
+                className="md:w-8 w-4 invert cursor-pointer mr-10"
+                onClick={throwConfetti}
+              />
+            </div>
+
+            <div
+              className="md:hidden mt-[-3px] bg-opacity-0 bg-gray-700 hover:bg-opacity-40 p-1.5 rounded-full transition-all duration-300"
+              onClick={() => setShowSmallMenu(false)}
+            >
+              <RxCross2 size={20} />
+            </div>
+          </div>
+          <div className="gap-1 flex flex-col items-start mt-10 justify-center">
+            {links.map((link) => (
+              <div
+                onClick={() => window.open(link.url, "_blank")}
+                className="flex mt-5 gap-1 items-center cursor-pointer border border-gray-700 px-8 py-5 rounded-lg w-full bg-white bg-opacity-0 hover:bg-opacity-10 transition-all ease-linear duration-200 md:p-1.5 md:px-2"
+                key={link.name}
+              >
+                {link.icon ? (
+                  <>
+                    {link.icon}
+                    <p className="pl-5">{link.name}</p>
+                  </>
+                ) : (
+                  <>
+                    {link.name}
+                    <RxArrowTopRight size={15} />
+                  </>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div
+        className="md:hidden mt-[-3px] bg-opacity-0 bg-gray-700 hover:bg-opacity-40 p-1.5 rounded-full transition-all duration-300"
+        onClick={() => setShowSmallMenu(true)}
+      >
+        <IoMdMenu size={20} />
       </div>
     </div>
   );
@@ -104,7 +157,7 @@ const MiddleBar = ({
   };
 
   return (
-    <div className="h-fit absolute ml-auto mr-auto left-0 right-0 w-fit">
+    <div className="h-fit md:absolute fixed bottom-2 ml-auto mr-auto left-0 right-0 w-fit">
       <div
         className={`h-full w-8 bg-white bg-opacity-25 rounded-md border-t-white border-t-[3px] transform-gpu absolute -z-10 transition-all duration-500 delay-[30ms] `}
         style={backDivStyle}

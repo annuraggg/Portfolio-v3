@@ -36,15 +36,18 @@ const Experience = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center md:w-auto">
       {experience.map((exp) => (
-        <div className="my-5 flex justify-between w-full p-10" key={exp.title}>
-          <h2 className=" drop-shadow-glowLight text-3xl">{exp.title}</h2>
+        <div
+          className="my-5 md:flex justify-between w-[100%] md:items-start items-center md:w-full md:p-10"
+          key={exp.title}
+        >
+          <h2 className=" drop-shadow-glowLight md:text-3xl">{exp.title}</h2>
 
-          <div className="w-[400px]">
+          <div className="md:w-[400px]">
             <p className="text-xl">{exp.role}</p>
-            <p className="text-gray-500 text-sm">{exp.date}</p>
-            <p className="text-gray-500">{exp.description}</p>
+            <p className="text-gray-500 text-xs md:text-sm">{exp.date}</p>
+            <p className="text-gray-500 text-xs md:text-base">{exp.description}</p>
           </div>
         </div>
       ))}

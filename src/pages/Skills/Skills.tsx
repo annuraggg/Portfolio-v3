@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa6";
 
-const Skills = () => {
-  const skillsData = [
-    "AWS",
+/* "AWS",
     "Chakra UI",
     "CSS",
     "Docker",
@@ -30,7 +28,107 @@ const Skills = () => {
     "SQL",
     "Tailwind CSS",
     "Typescript",
-    "WebSockets",
+    "WebSockets",*/
+
+const Skills = () => {
+  const skillsData: {
+    title: string;
+    progress?: string;
+  }[] = [
+    {
+      title: "AWS",
+      progress: "https://roadmap.sh/aws?s=646cf314cb6301e67f89a4c5",
+    },
+    {
+      title: "Chakra UI",
+    },
+    {
+      title: "CSS",
+    },
+    {
+      title: "Docker",
+      progress: "https://roadmap.sh/docker?s=646cf314cb6301e67f89a4c5",
+    },
+    {
+      title: "ExpressJS",
+    },
+    {
+      title: "Figma",
+    },
+    {
+      title: "Firebase",
+    },
+    {
+      title: "Flask",
+    },
+    {
+      title: "Git",
+    },
+    {
+      title: "GitHub",
+    },
+    {
+      title: "HTML",
+    },
+    {
+      title: "JavaScript",
+      progress: "https://roadmap.sh/javascript?s=646cf314cb6301e67f89a4c5",
+    },
+    {
+      title: "JWT",
+    },
+    {
+      title: "Linux",
+      progress: "https://roadmap.sh/linux?s=646cf314cb6301e67f89a4c5",
+    },
+    {
+      title: "MongoDB",
+      progress: "https://roadmap.sh/mongodb?s=646cf314cb6301e67f89a4c5",
+    },
+    {
+      title: "Next.js",
+    },
+    {
+      title: "Node.js",
+      progress: "https://roadmap.sh/nodejs",
+    },
+    {
+      title: "OAuth",
+    },
+    {
+      title: "OAuth2",
+    },
+    {
+      title: "Python",
+      progress: "https://roadmap.sh/python",
+    },
+    {
+      title: "React",
+      progress: "https://roadmap.sh/react?s=646cf314cb6301e67f89a4c5",
+    },
+    {
+      title: "Redux",
+    },
+    {
+      title: "RESTful API",
+    },
+    {
+      title: "ShadCN UI",
+    },
+    {
+      title: "SQL",
+      progress: "https://roadmap.sh/sql?s=646cf314cb6301e67f89a4c5",
+    },
+    {
+      title: "Tailwind CSS",
+    },
+    {
+      title: "Typescript",
+      progress: "https://roadmap.sh/typescript?s=646cf314cb6301e67f89a4c5",
+    },
+    {
+      title: "WebSockets",
+    },
   ];
 
   const credentials: {
@@ -42,13 +140,13 @@ const Skills = () => {
     {
       title: "Rising Star: Technical",
       date: "February 2024",
-      link: "https://www.credly.com/badges/1089e657-65ab-494b-94e3-ede47804fe45/public_url",
+      link: "https://www.credly.com/badges/101df7a1-068e-43f2-955f-5d39a7e3fa66/public_url",
       organization: "Celenois",
     },
     {
       title: "Cybersecurity Essentials",
       date: "Oct 2023",
-      link: "https://www.credly.com/badges/cba488c9-c618-472f-9bcd-b20cd1ea91ee/public_url",
+      link: "https://www.credly.com/badges/3c1da57e-ccd2-4707-bb36-cf075168817b/public_url",
       organization: "Cisco",
     },
     {
@@ -86,14 +184,18 @@ const Skills = () => {
   };
 
   return (
-    <div className="w-[70%]">
-      <h1 className=" font-poly text-7xl text-center mb-10 drop-shadow-glow">
+    <div className="md:w-[70%] w-[85vw]">
+      <h1 className=" font-poly text-3xl md:text-7xl text-center drop-shadow-glow">
         Skills
       </h1>
+      <p className="text-gray-500 md:text-base text-sm text-center mb-10 mt-2">
+        Green items include proficency. Click to see
+      </p>
+
       <div className="flex flex-wrap gap-5 items-center justify-center">
         {skillsData.map((skill, index) => (
           <motion.li
-            className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80"
+            className={`bg-white md:text-base text-xs borderBlack rounded-xl px-5 py-3 bg-white/10 cursor-pointer hover:${skill.progress ? "bg-green-600" : "bg-red-500"}  transition-all duration-300`}
             key={index}
             variants={fadeInAnimationVariants}
             initial="initial"
@@ -102,8 +204,9 @@ const Skills = () => {
               once: true,
             }}
             custom={index}
+            onClick={() => window.open(skill.progress, "_blank")}
           >
-            {skill}
+            {skill.title}
           </motion.li>
         ))}
       </div>
@@ -121,9 +224,9 @@ const Skills = () => {
               onClick={() => window.open(c.link, "_blank")}
             >
               <div>
-                <h1 className="text-xl drop-shadow-glow">{c.title}</h1>
+                <h1 className="md:text-xl text-base drop-shadow-glow">{c.title}</h1>
                 <p>{c.organization}</p>
-                <p className="text-sm text-gray-500">{c.date}</p>
+                <p className="md:text-sm text-xs md:mt-0 mt-2 text-gray-500">{c.date}</p>
               </div>
 
               <FaArrowRight className=" group-hover:translate-x-2 transition-all duration-300" />
