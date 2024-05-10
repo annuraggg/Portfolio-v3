@@ -62,6 +62,7 @@ const Work = () => {
       <div className="flex flex-col gap-5">
         {work.map((w) => (
           <div
+            key={w.name}
             className="bg-gradient-to-r from-[#252524]  via-[#ffffff92] to-[#252524] p-[1px] rounded-3xl mt-10 cursor-pointer group "
             onClick={() => window.open(w.link)}
           >
@@ -75,7 +76,9 @@ const Work = () => {
                   </p>
                 </div>
 
-                {w.link && (<FaArrowRight className=" group-hover:translate-x-2 transition-all duration-500 ease-in-out" />)}
+                {w.link && (
+                  <FaArrowRight className=" group-hover:translate-x-2 transition-all duration-500 ease-in-out" />
+                )}
               </div>
 
               <div className="flex items-center justify-center">
