@@ -1,5 +1,6 @@
 import { RxArrowTopRight } from "react-icons/rx";
 import { LuGithub, LuLinkedin, LuInstagram } from "react-icons/lu";
+import JSConfetti from "js-confetti";
 
 const Navbar = ({
   active,
@@ -33,18 +34,34 @@ const Navbar = ({
       name: "Resume",
       url: "https://www.linkedin.com/in/annuraggg",
     },
+    {
+      name: "Blog",
+      url: "https://blog.anuragsawant.in",
+    },
   ];
+
+  const jsConfetti = new JSConfetti();
+  const throwConfetti = () => {
+    jsConfetti.addConfetti({
+      confettiColors: ["#101010", "#1C1C1C", "#ffffff6e"],
+    });
+  };
+  
 
   return (
     <div className="px-10 py-5 flex items-center justify-between fixed w-full z-50">
       <div className="flex gap-5 items-center w-full">
-        <img src="logoicon.png" className="w-8 invert" />
+        <img
+          src="logoicon.png"
+          className="w-8 invert cursor-pointer"
+          onClick={throwConfetti}
+        />
         <div>
           <p className="text-lg">Anurag Sawant</p>
           <p className="text-xs text-gray-400">Full Stack Dev.</p>
         </div>
       </div>
-  
+
       <MiddleBar active={active} setActive={(index) => setActive(index)} />
 
       <div className="flex gap-5">
@@ -76,7 +93,7 @@ const MiddleBar = ({
   active: number;
   setActive: (index: number) => void;
 }) => {
-  const navItems = ["Work", "Info"];
+  const navItems = ["Work", "Info", "Skills", "Contact"];
 
   const backDivStyle = {
     transform: `translateX(${30 + 90 * active}px)`,
@@ -100,7 +117,7 @@ const MiddleBar = ({
         ></div>
       </div>
 
-      <div className="border-2 backdrop-blur-2xl bg-white mt-0.5 bg-opacity-0 hover:bg-opacity-5 border-[#3F3E3E] rounded-full p-1 flex gap-2 items-center justify-center self-center justify-self-center">
+      <div className="border-2 backdrop-blur-lg bg-white mt-0.5 bg-opacity-0 hover:bg-opacity-5 border-[#3F3E3E] rounded-full p-1 flex gap-2 items-center justify-center self-center justify-self-center">
         {navItems.map((item, index) => (
           <div
             className={`w-20 text-sm h-10 backdrop-filter:blur() flex items-center justify-center rounded-full cursor-pointer transition-all duration-300 
