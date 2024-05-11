@@ -171,7 +171,7 @@ const Skills = () => {
 
   const fadeInAnimationVariants = {
     initial: {
-      opacity: 0,
+      opacity: 0.5,
       y: 100,
     },
     animate: (index: number) => ({
@@ -184,7 +184,7 @@ const Skills = () => {
   };
 
   return (
-    <div className="md:w-[70%] w-[85vw]">
+    <div className="md:w-[70%] w-[85vw] animate__animated animate__fadeIn">
       <h1 className=" font-poly text-3xl md:text-7xl text-center drop-shadow-glow">
         Skills
       </h1>

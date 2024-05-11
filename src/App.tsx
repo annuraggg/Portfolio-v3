@@ -8,28 +8,61 @@ import Info from "./pages/Info/Info";
 import "animate.css";
 import Skills from "./pages/Skills/Skills";
 import Contact from "./pages/Contact/Contact";
+import Project from "./pages/Project/Project";
+import Loader from "./pages/Loader/Loader";
 
 function App() {
   const [active, setActive] = useState(0);
+  const [project, setProject] = useState(0);
+
+  const [loading, setLoading] = useState(false);
+  const [projectLoading, setProjectLoading] = useState(false);
+  const loadDelay = 1000;
 
   const changeTab = (index: number) => {
+    setLoading(true);
     setActive(index);
-    window.scrollTo(0, 0);
+    setTimeout(() => {
+      setLoading(false);
+      window.scrollTo(0, 0);
+    }, loadDelay);
   };
 
-  return (
-    <div data-scroll-container data-scroll>
-      <Navbar active={active} setActive={(index) => changeTab(index)} />
-      <GlowEffect />
-      <div className="w-full h-full flex justify-center flex-col items-center px-28 md:pt-28 pt-16 md:mb-0 mb-16">
-        {active === 0 && <Work />}
-        {active === 1 && <Info />}
-        {active === 2 && <Skills />}
-        {active === 3 && <Contact />}
+  const changeProject = (no: number) => {
+    setProjectLoading(true);
+    setProject(no);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+      setProjectLoading(false);
+    }, loadDelay);
+  };
 
-        <div className="h-24"></div>
-        <Footer setActive={changeTab} />
-      </div>
+  if (projectLoading) return <Loader />;
+
+  return (
+    <div>
+      {project === 0 ? (
+        <>
+          <Navbar active={active} setActive={(index) => changeTab(index)} />
+          <GlowEffect />
+          <div className="w-full h-full flex justify-center flex-col items-center px-28 md:pt-28 pt-16 md:mb-0 mb-16">
+            {loading ? (
+              <Loader />
+            ) : (
+              <>
+                {active === 0 && <Work setProject={changeProject} />}
+                {active === 1 && <Info />}
+                {active === 2 && <Skills />}
+                {active === 3 && <Contact />}
+              </>
+            )}
+            <div className="h-24"></div>
+            <Footer setActive={changeTab} />
+          </div>
+        </>
+      ) : (
+        <Project id={project} changeProject={changeProject} />
+      )}
     </div>
   );
 }

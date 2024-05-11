@@ -9,7 +9,7 @@ const signStyle = {
 
 const Info = () => {
   return (
-    <div className="md:w-[70%] w-[85vw] md:mt-16">
+    <div className="md:w-[70%] w-[85vw] md:mt-16 animate__animated animate__fadeIn">
       <p className="text-sm font-poly text-gray-500 drop-shadow-glow tracking-wide">
         ABOUT ME
       </p>
