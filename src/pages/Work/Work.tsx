@@ -33,7 +33,7 @@ const Work = ({ setProject }: { setProject: (no: number) => void }) => {
               <div className="flex md:justify-between md:flex-row flex-col-reverse">
                 <div className="md:w-[90%]">
                   <h2 className="text-2xl">{w.title}</h2>
-                  <p className="text-gray-500 text-sm">{w.description}</p>
+                  <p className="text-gray-500 text-sm">{w.summary}</p>
                 </div>
 
                 <FaArrowRight
