@@ -29,16 +29,16 @@ const Work = ({ setProject }: { setProject: (no: number) => void }) => {
             className="bg-gradient-to-r from-[#252524] w-full via-[#ffffff92] to-[#252524] p-[1px] rounded-3xl mt-5 md:mt-10 cursor-pointer group "
             onClick={() => changeProject(w.id)} // ! CHANGE
           >
-            <div className=" bg-gradient-to-b md:h-[75vh] from-[#222323] to-[#151515] flex-col md:flex-row rounded-3xl p-7 md:p-10 overflow-hidden duration-300 transition-all">
+            <div className="bg-gradient-to-b md:h-[75vh] from-[#222323] to-[#151515] flex-col md:flex-row rounded-3xl p-7 md:p-10 overflow-hidden duration-300 transition-all">
               <div className="flex md:justify-between md:flex-row flex-col-reverse">
-                <div>
+                <div className="md:w-[90%]">
                   <h2 className="text-2xl">{w.title}</h2>
                   <p className="text-gray-500 text-sm">{w.description}</p>
                 </div>
 
                 <FaArrowRight
                   size={20}
-                  className="mb-5 self-end md:self-auto md:mb-0 md:w-auto group-hover:translate-x-2 transition-all duration-500 ease-in-out"
+                  className="mb-5 self-end md:self-auto md:mb-0 group-hover:translate-x-2 transition-all duration-500 ease-in-out"
                 />
               </div>
 

@@ -157,7 +157,7 @@ const MiddleBar = ({
   };
 
   return (
-    <div className="h-fit md:absolute fixed bottom-2 ml-auto mr-auto left-0 right-0 w-fit">
+    <div className="h-fit md:absolute fixed bottom-2 ml-auto mr-auto left-0 right-0 w-fit z-50">
       <div
         className={`h-full w-8 bg-white bg-opacity-25 rounded-md border-t-white border-t-[3px] transform-gpu absolute -z-10 transition-all duration-500 delay-[30ms] `}
         style={backDivStyle}

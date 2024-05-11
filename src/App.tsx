@@ -37,7 +37,7 @@ function App() {
     }, loadDelay);
   };
 
-  if (projectLoading) return <Loader />;
+  if (projectLoading) return <Loader projectLoading={projectLoading} />;
 
   return (
     <div>
@@ -56,8 +56,13 @@ function App() {
                 {active === 3 && <Contact />}
               </>
             )}
-            <div className="h-24"></div>
-            <Footer setActive={changeTab} />
+
+            {!loading && !projectLoading && (
+              <>
+                <div className="h-24"></div>
+                <Footer setActive={changeTab} />
+              </>
+            )}
           </div>
         </>
       ) : (
