@@ -4,6 +4,7 @@ import JSConfetti from "js-confetti";
 import Resume from "../documents/resume.pdf";
 import { IoMdMenu } from "react-icons/io";
 import { useState } from "react";
+import { CiCoffeeCup } from "react-icons/ci";
 
 const Navbar = ({
   active,
@@ -17,6 +18,11 @@ const Navbar = ({
     url: string;
     icon?: JSX.Element;
   }[] = [
+    {
+      name: "Buy Me a Coffee",
+      url: "https://www.buymeacoffee.com/annuraggg",
+      icon: <CiCoffeeCup size={25} />,
+    },
     {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/annuraggg",

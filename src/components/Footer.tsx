@@ -7,6 +7,7 @@ const Footer = ({ setActive }: { setActive: (index: number) => void }) => {
         <div className="flex items-center justify-center flex-col md:block">
           <img src="./logoicon.png" className="w-8 invert" />
           <p className="mt-2 md:mt-10">Made with ❤️ By Anurag</p>
+          <p className="text-xs text-gray-500 cursor-pointer" onClick={() => window.open("https://buymeacoffee.com/annuraggg", "_blank")}>Buy Me A Coffee?</p>
         </div>
 
         <div className="flex justfy-between gap-20 mt-10 md:mt-0">
@@ -79,7 +80,7 @@ const Footer = ({ setActive }: { setActive: (index: number) => void }) => {
       </div>
 
       <p className="text-center mb-10 text-gray-500 text-xs mt-[-30px]">
-        Last Updated on 12th May, 2024, 10:21 AM IST
+        Last Updated on 16th May, 2024, 7:11 PM IST
       </p>
     </div>
   );

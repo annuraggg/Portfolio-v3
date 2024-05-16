@@ -2,6 +2,7 @@ import { IoChevronBack } from "react-icons/io5";
 import projects, { Project as ProjectType } from "../../data/projects";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { CiCoffeeCup } from "react-icons/ci";
 
 const Project = ({
   id,
@@ -30,7 +31,6 @@ const Project = ({
       },
     }),
   };
-
 
   if (!project)
     return (
@@ -65,7 +65,9 @@ const Project = ({
       </div>
 
       <div className="flex mt-5 md:mt-0 items-center justify-center p-10 flex-col">
-        <h1 className="text-xl  md:text-5xl font-poly drop-shadow-glow">{project.title}</h1>
+        <h1 className="text-xl  md:text-5xl font-poly drop-shadow-glow">
+          {project.title}
+        </h1>
         <p className="text-gray-500 mt-5">{project.date}</p>
 
         <div className="flex gap-3">
@@ -215,6 +217,15 @@ const Project = ({
       <div className="mt-20 flex items-center justify-center flex-col">
         <p className="text-xl mb-5">Thank you</p>
         <img src="./sign.png" className="invert w-14" alt="Signature" />
+
+        <div className="mt-10 p-3 transition-all duration-300 cursor-pointer rounded-full bg-white bg-opacity-0 hover:bg-opacity-10 ">
+          <CiCoffeeCup
+            size={30}
+            onClick={() =>
+              window.open("https://buymeacoffee.com/annuraggg", "_blank")
+            }
+          />
+        </div>
       </div>
     </div>
   );
