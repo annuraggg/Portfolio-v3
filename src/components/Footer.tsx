@@ -80,7 +80,7 @@ const Footer = ({ setActive }: { setActive: (index: number) => void }) => {
       </div>
 
       <p className="text-center mb-10 text-gray-500 text-xs mt-[-30px]">
-        Last Updated on 16th May, 2024, 7:11 PM IST
+        Last Updated on 25th May, 2024, 7:11 PM IST
       </p>
     </div>
   );
