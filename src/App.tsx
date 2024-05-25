@@ -10,6 +10,7 @@ import Skills from "./pages/Skills/Skills";
 import Contact from "./pages/Contact/Contact";
 import Project from "./pages/Project/Project";
 import Loader from "./pages/Loader/Loader";
+import Hotjar from "@hotjar/browser";
 
 function App() {
   const [active, setActive] = useState(0);
@@ -18,6 +19,10 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [projectLoading, setProjectLoading] = useState(false);
   const loadDelay = 1000;
+  const siteId = 4998360;
+  const hotjarVersion = 6;
+
+  Hotjar.init(siteId, hotjarVersion);
 
   const changeTab = (index: number) => {
     setLoading(true);
