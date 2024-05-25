@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Work from "./pages/Work/Work";
@@ -10,7 +10,7 @@ import Skills from "./pages/Skills/Skills";
 import Contact from "./pages/Contact/Contact";
 import Project from "./pages/Project/Project";
 import Loader from "./pages/Loader/Loader";
-import Hotjar from "@hotjar/browser";
+import LogRocket from "logrocket";
 
 function App() {
   const [active, setActive] = useState(0);
@@ -19,10 +19,13 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [projectLoading, setProjectLoading] = useState(false);
   const loadDelay = 1000;
-  const siteId = 4998360;
-  const hotjarVersion = 6;
 
-  Hotjar.init(siteId, hotjarVersion);
+  useEffect(() => {
+    LogRocket.init(import.meta.env.VITE_LOGROCKET_ID as string);
+    LogRocket.identify(
+      Math.random().toString(36).substring(2) + Date.now().toString(36)
+    );
+  }, []);
 
   const changeTab = (index: number) => {
     setLoading(true);

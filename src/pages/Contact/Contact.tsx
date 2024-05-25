@@ -73,7 +73,7 @@ const Contact = () => {
 
   return (
     <div className="md:w-auto w-[85vw] animate__animated animate__fadeIn" id="mainContact">
-      <h1 className="md:text-7xl text-3xl drop-shadow-glow font-poly">
+      <h1 className="md:text-7xl text-center text-3xl drop-shadow-glow font-poly">
         Get in Touch{" "}
         <span className="font-gloock italic bg-gradient-to-b from-[#ffffff6e] via-[#d8d9d8bc] to-[#10101000] text-transparent bg-clip-text">
           With Me.
