@@ -2,7 +2,7 @@ export interface Project {
   id: number;
   title: string;
   date: string;
-  cover: string;
+  cover?: string;
   role: string;
   timeline: string;
 
@@ -22,11 +22,76 @@ export interface Project {
     github?: string;
     demo?: string;
   };
+
+  development?: boolean;
 }
 
 const projects: Project[] = [
   {
-    id: 1,
+    id: 7,
+    title: "Scriptopia Code",
+    date: "2024",
+    cover: "projects/scriptopiaCode/cover.png",
+    role: "Full Stack Developer",
+    timeline: "January 2024 - Present",
+    summary:
+      "A coding platform that allows users to practice coding problems, participate in contests, and improve their coding skills. Enterprise Plans have ATS Systems to help companies hire the best talent",
+    description: `Scriptopia Code is a coding platform that allows users to practice coding problems, participate in contests, and improve their coding skills. It provides a wide range of problems and challenges across multiple domains, including data structures, algorithms, and programming languages. Scriptopia Code also includes features like leaderboards, contests, and virtual interviews, making it an ideal platform for students, educators, and professionals. The platform is designed to be interactive and engaging, with a clean and user-friendly interface.`,
+    problem: `Many coding platforms lack a comprehensive set of features and tools for users to practice and improve their coding skills. They often focus on specific domains or lack real-world applications, making it difficult for users to apply their knowledge in practical scenarios. This also makes it hard for companies to assess thier candidates`,
+    solution: `Scriptopia Code provides a wide range of problems and challenges across multiple domains, helping users practice and improve their coding skills. It includes features like leaderboards, contests, and virtual interviews, making it an ideal platform for students, educators, and professionals. The platform also offers enterprise plans with ATS Systems to help companies hire the best talent.`,
+    highlights: [
+      "Practice Problems: A wide range of problems and challenges across multiple domains to help users improve their coding skills.",
+      "Leaderboards: Dynamic leaderboards that rank users based on their performance and contributions.",
+      "Contests: Regular contests and challenges to test users' skills and knowledge.",
+      "Virtual Interviews: Mock interviews and coding assessments to help users prepare for job interviews.",
+      "ATS Systems: Enterprise plans with ATS Systems to help companies hire the best talent.",
+    ],
+    technologies: [
+      "React",
+      "ShadCN UI",
+      "NextUI",
+      "Node.js",
+      "Hono",
+      "MongoDB",
+      "AWS Lambda",
+      "DigitalOcean",
+      "Redis",
+      "Clerk",
+    ],
+    links: {
+      github: "https://github.com/annuraggg/Scriptopia-Code-2.0",
+      demo: "https://www.scriptopia.tech",
+    },
+    development: true,
+  },
+  {
+    id: 6,
+    title: "Convostream API",
+    date: "2024",
+    cover: "projects/convostreamAPI/cover.png",
+    role: "Full Stack Developer",
+    timeline: "March 2024 - Present",
+    summary:
+      "A RESTful API that allows developers to enable end-to-end encrypted chat functionality in their applications",
+    description: `Convostream API is a RESTful API that allows developers to enable end-to-end encrypted chat functionality in their applications. It provides a secure and reliable way to implement chat features like messaging, voice calls, and video calls. Convostream API is designed to be flexible and scalable, with support for React Apps. It also includes features like message history, notifications, and user authentication, making it an ideal solution for developers building chat applications.`,
+    problem: `Developers often struggle to implement secure and reliable chat functionality in their applications. They lack the expertise and resources to build end-to-end encrypted chat features, leading to privacy and security concerns for users.`,
+    solution: `Convostream API provides a secure and reliable way to implement end-to-end encrypted chat functionality in applications. It offers features like messaging, voice calls, and video calls, with support for React Apps. The API also includes message history, notifications, and user authentication, making it easy for developers to build chat applications that prioritize privacy and security.`,
+    highlights: [
+      "Messaging: Implement end-to-end encrypted messaging features in applications.",
+      "Voice Calls: Enable secure voice calls between users with end-to-end encryption.",
+      "Video Calls: Support video calls with end-to-end encryption for enhanced privacy and security.",
+      "Message History: Store and retrieve message history for users to view and manage conversations.",
+      "Notifications: Send real-time notifications to users for new messages, calls, and updates.",
+    ],
+    technologies: ["Node.js", "Express", "MongoDB", "Socket.IO", "React"],
+    links: {
+      github: "https://github.com/annuraggg/ConvoStream-API",
+      demo: "https://www.npmjs.com/package/convostream",
+    },
+    development: true,
+  },
+  {
+    id: 5,
     title: "Scriptopia Campus",
     date: "2023",
     cover: "projects/scriptopiaCampus/cover.png",
@@ -75,7 +140,7 @@ const projects: Project[] = [
   },
 
   {
-    id: 2,
+    id: 4,
     title: "Algovis",
     date: "2024",
     cover: "projects/algovis/cover.png",
@@ -120,7 +185,7 @@ const projects: Project[] = [
   },
 
   {
-    id: 4,
+    id: 2,
     title: "CallMaven",
     date: "2022",
     cover: "projects/callmaven/cover.png",
@@ -145,7 +210,7 @@ const projects: Project[] = [
   },
 
   {
-    id: 5,
+    id: 1,
     title: "Spycrop",
     date: "2022",
     cover: "projects/spycrop/cover.png",

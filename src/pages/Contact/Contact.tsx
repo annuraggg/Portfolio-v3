@@ -26,7 +26,7 @@ const Contact = () => {
       return;
     }
 
-    if (email === "contact@anuragsawant.in") {
+    if (email === "hello@anuragsawant.in" || email === "contact@anuragsawant.in") {
       toast.warning("You can't pretend to be me!");
       toast.warning("YOU MADE THE WEBSITE ANGRY! 😡");
       document.getElementById("mainContact")?.classList.add("animate__animated", "animate__shakeX");
@@ -86,9 +86,9 @@ const Contact = () => {
       <div className="flex items-center justify-center flex-col mt-10">
         <p
           className="cursor-pointer hover:text-blue-500 transition-all duration-300"
-          onClick={() => window.open("mailto:contact@anuragsawant.in")}
+          onClick={() => window.open("mailto:hello@anuragsawant.in")}
         >
-          contact@anuragsawant.in
+          hello@anuragsawant.in
         </p>
 
         <form action="" className="mt-5 md:w-auto w-[85vw]">

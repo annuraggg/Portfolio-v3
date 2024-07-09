@@ -27,11 +27,17 @@ const Work = ({ setProject }: { setProject: (no: number) => void }) => {
           <div
             key={w.title}
             className="bg-gradient-to-r from-[#252524] w-full via-[#ffffff92] to-[#252524] p-[1px] rounded-3xl mt-5 md:mt-10 cursor-pointer group "
-            onClick={() => changeProject(w.id)} // ! CHANGE
+            onClick={() => changeProject(w.id)}
           >
             <div className="bg-gradient-to-b md:h-[75vh] from-[#222323] to-[#151515] flex-col md:flex-row rounded-3xl p-7 md:p-10 overflow-hidden duration-300 transition-all">
               <div className="flex md:justify-between md:flex-row flex-col-reverse">
                 <div className="md:w-[90%]">
+                  {w?.development && (
+                    <div className="text-xs">
+                      <p className="text-yellow-500 bg-yellow-500 bg-opacity-20 px-2 py-1 rounded-full mb-2 w-fit">Work In Progress!</p>
+                    </div>
+                  )}
+
                   <h2 className="text-2xl">{w.title}</h2>
                   <p className="text-gray-500 text-sm">{w.summary}</p>
                 </div>
@@ -44,7 +50,7 @@ const Work = ({ setProject }: { setProject: (no: number) => void }) => {
 
               <div className="flex items-center justify-center">
                 <img
-                  src={w.cover}
+                  src={w.cover ? w.cover : "https://via.placeholder.com/300"}
                   alt={w.title}
                   className="md:w-[90%] mt-5 md:mt-20 rounded-3xl group-hover:mt-10 transition-all duration-500 ease-in-out"
                 />

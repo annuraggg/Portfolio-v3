@@ -75,9 +75,6 @@ const Skills = () => {
       progress: "https://roadmap.sh/javascript?s=646cf314cb6301e67f89a4c5",
     },
     {
-      title: "JWT",
-    },
-    {
       title: "Linux",
       progress: "https://roadmap.sh/linux?s=646cf314cb6301e67f89a4c5",
     },
@@ -86,18 +83,10 @@ const Skills = () => {
       progress: "https://roadmap.sh/mongodb?s=646cf314cb6301e67f89a4c5",
     },
     {
-      title: "Next.js",
-    },
-    {
       title: "Node.js",
       progress: "https://roadmap.sh/nodejs",
     },
-    {
-      title: "OAuth",
-    },
-    {
-      title: "OAuth2",
-    },
+
     {
       title: "Python",
       progress: "https://roadmap.sh/python",
@@ -116,6 +105,9 @@ const Skills = () => {
       title: "ShadCN UI",
     },
     {
+      title: "NextUI",
+    },
+    {
       title: "SQL",
       progress: "https://roadmap.sh/sql?s=646cf314cb6301e67f89a4c5",
     },
@@ -128,6 +120,15 @@ const Skills = () => {
     },
     {
       title: "WebSockets",
+    },
+    {
+      title: "DigitalOcean",
+    },
+    {
+      title: "Redis",
+    },
+    {
+      title: "Vercel / Netlify",
     },
   ];
 
@@ -188,27 +189,36 @@ const Skills = () => {
       <h1 className=" font-poly text-3xl md:text-7xl text-center drop-shadow-glow">
         Skills
       </h1>
-      <p className="text-gray-500 md:text-base text-sm text-center mb-10 mt-2">
+      <p className="text-gray-500 md:text-base text-sm text-center mt-2">
         Green items include proficency. Click to see
+      </p>
+      <p className="text-gray-500 text-xs text-center mb-10 mt-2">
+        Last Updated at {import.meta.env.VITE_SKILLS_UPDATED_AT}
       </p>
 
       <div className="flex flex-wrap gap-5 items-center justify-center">
-        {skillsData.map((skill, index) => (
-          <motion.li
-            className={`bg-white md:text-base text-xs borderBlack rounded-xl px-5 py-3 bg-white/10 cursor-pointer hover:${skill.progress ? "bg-green-600" : "bg-red-500"}  transition-all duration-300`}
-            key={index}
-            variants={fadeInAnimationVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{
-              once: true,
-            }}
-            custom={index}
-            onClick={() => window.open(skill.progress, "_blank")}
-          >
-            {skill.title}
-          </motion.li>
-        ))}
+        {skillsData
+          .sort((a, b) => a.title.localeCompare(b.title))
+          .map((skill, index) => (
+            <motion.li
+              className={`bg-white md:text-base ${
+                skill.progress ? "hover:text-green-600" : "hover:text-red-500"
+              } text-xs borderBlack rounded-xl px-5 py-3 bg-white/10 cursor-pointer hover:${
+                skill.progress ? "bg-green-600" : "bg-red-500"
+              }  transition-all duration-300`}
+              key={index}
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={index}
+              onClick={() => window.open(skill.progress, "_blank")}
+            >
+              {skill.title}
+            </motion.li>
+          ))}
       </div>
 
       <div className="mt-20">
@@ -224,9 +234,13 @@ const Skills = () => {
               onClick={() => window.open(c.link, "_blank")}
             >
               <div>
-                <h1 className="md:text-xl text-base drop-shadow-glow">{c.title}</h1>
+                <h1 className="md:text-xl text-base drop-shadow-glow">
+                  {c.title}
+                </h1>
                 <p>{c.organization}</p>
-                <p className="md:text-sm text-xs md:mt-0 mt-2 text-gray-500">{c.date}</p>
+                <p className="md:text-sm text-xs md:mt-0 mt-2 text-gray-500">
+                  {c.date}
+                </p>
               </div>
 
               <FaArrowRight className=" group-hover:translate-x-2 transition-all duration-300" />

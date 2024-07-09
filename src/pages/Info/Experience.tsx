@@ -33,11 +33,18 @@ const Experience = () => {
         "Developed a website using HTML, CSS, JS, Node.js, Express.js, and MongoDB for a online doctor appointment booking platform.",
       role: "Participant",
     },
+    {
+      title: "Playtheory Labs",
+      date: "June 2024 - Present",
+      description:
+        "Developing multiple MERN Stack Application with a bunch of cool peeps.",
+      role: "Full Stack Intern",
+    },
   ];
 
   return (
     <div className="flex flex-col items-center justify-center md:w-auto">
-      {experience.map((exp) => (
+      {experience.reverse().map((exp) => (
         <div
           className="my-5 md:flex justify-between w-[100%] md:items-start items-center md:w-full md:p-10"
           key={exp.title}
@@ -47,7 +54,9 @@ const Experience = () => {
           <div className="md:w-[400px]">
             <p className="text-xl">{exp.role}</p>
             <p className="text-gray-500 text-xs md:text-sm">{exp.date}</p>
-            <p className="text-gray-500 text-xs md:text-base">{exp.description}</p>
+            <p className="text-gray-500 text-xs md:text-base">
+              {exp.description}
+            </p>
           </div>
         </div>
       ))}
