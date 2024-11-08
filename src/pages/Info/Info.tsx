@@ -36,10 +36,10 @@ const Info = () => {
               src="./logoicon.png"
               alt=""
               onClick={(e) => {
-                e.currentTarget.classList.remove("hover:invert-[0.2]");
+                e.currentTarget.classList.remove("hover:invert-[0.5]");
                 e.currentTarget.classList.add("invert-[0.8]", "animate__hinge");
               }}
-              className="md:w-64 w-24 d mt-10 hover:invert-[0.2] cursor-pointer transition-all duration-300  animate__animated"
+              className="md:w-64 w-24 d mt-10 hover:invert-[0.5] invert-0.2 cursor-pointer transition-all duration-300  animate__animated"
             />
           </div>
 
