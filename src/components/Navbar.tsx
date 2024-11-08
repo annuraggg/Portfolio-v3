@@ -60,7 +60,7 @@ const Navbar = ({
 
   return (
     <div className="px-10 py-5 flex items-center justify-between md:fixed w-full z-50">
-      <div className="flex gap-5 items-center w-full">
+      <div className="flex gap-2 items-center w-full">
         <img
           src="logoicon.png"
           className="md:w-8 w-4 invert cursor-pointer mr-10"
