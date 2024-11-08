@@ -37,7 +37,7 @@ const Info = () => {
               alt=""
               onClick={(e) => {
                 e.currentTarget.classList.remove("hover:invert-[0.2]");
-                e.currentTarget.classList.add("invert", "animate__hinge");
+                e.currentTarget.classList.add("invert-[0.8]", "animate__hinge");
               }}
               className="md:w-64 w-24 d mt-10 hover:invert-[0.2] cursor-pointer transition-all duration-300  animate__animated"
             />
