@@ -35,9 +35,9 @@ const Experience = () => {
     },
     {
       title: "Playtheory Labs",
-      date: "June 2024 - Present",
+      date: "June 2024 - Nov 2024",
       description:
-        "Developing multiple MERN Stack Application with a bunch of cool peeps.",
+        "Developing multiple Data Based MERN Stack Application with a bunch of cool peeps.",
       role: "Full Stack Intern",
     },
   ];
