@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
+import DiscordProfile from "./DiscordProfile";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -26,10 +27,15 @@ const Contact = () => {
       return;
     }
 
-    if (email === "hello@anuragsawant.in" || email === "contact@anuragsawant.in") {
+    if (
+      email === "hello@anuragsawant.in" ||
+      email === "contact@anuragsawant.in"
+    ) {
       toast.warning("You can't pretend to be me!");
       toast.warning("YOU MADE THE WEBSITE ANGRY! 😡");
-      document.getElementById("mainContact")?.classList.add("animate__animated", "animate__shakeX");
+      document
+        .getElementById("mainContact")
+        ?.classList.add("animate__animated", "animate__shakeX");
       setTimeout(() => {
         document.getElementById("mainContact")?.classList.add("animate-spin");
       }, 1000);
@@ -72,7 +78,10 @@ const Contact = () => {
   };
 
   return (
-    <div className="md:w-auto w-[85vw] animate__animated animate__fadeIn" id="mainContact">
+    <div
+      className="md:w-auto w-[85vw] animate__animated animate__fadeIn"
+      id="mainContact"
+    >
       <h1 className="md:text-7xl text-center text-3xl drop-shadow-glow font-poly">
         Get in Touch{" "}
         <span className="font-gloock italic bg-gradient-to-b from-[#ffffff6e] via-[#d8d9d8bc] to-[#10101000] text-transparent bg-clip-text">
@@ -82,6 +91,10 @@ const Contact = () => {
       <p className="text-center mt-2 text-gray-500">
         I would love to hear from you
       </p>
+
+      <div className="flex items-center justify-center my-5">
+        <DiscordProfile />
+      </div>
 
       <div className="flex items-center justify-center flex-col mt-10">
         <p

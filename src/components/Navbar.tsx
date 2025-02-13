@@ -5,6 +5,7 @@ import Resume from "../documents/resume.pdf";
 import { IoMdMenu } from "react-icons/io";
 import { useState } from "react";
 import { CiCoffeeCup } from "react-icons/ci";
+import { RiDiscordLine } from "react-icons/ri";
 
 const Navbar = ({
   active,
@@ -22,6 +23,11 @@ const Navbar = ({
       name: "Buy Me a Coffee",
       url: "https://www.buymeacoffee.com/annuraggg",
       icon: <CiCoffeeCup size={25} />,
+    },
+    {
+      name: "Discord",
+      url: "https://discordapp.com/users/564130664643952690",
+      icon: <RiDiscordLine size={20} />,
     },
     {
       name: "LinkedIn",
