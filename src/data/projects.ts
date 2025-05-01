@@ -24,9 +24,92 @@ export interface Project {
   };
 
   development?: boolean;
+  group?: string;
 }
 
 const projects: Project[] = [
+  {
+    id: 9,
+    title: "Scriptopia Campus",
+    date: "2025",
+    cover: "projects/scriptopiaCampus/cover.png",
+    role: "Full Stack Developer",
+    timeline: "Jan 2025 - April 2025",
+    summary:
+      "Scriptopia Campus is an end-to-end campus recruitment and placement management platform designed for educational institutions and recruiters. It streamlines the entire campus hiring process—from student onboarding and assessment to company coordination and offer tracking—providing a centralized, transparent, and data-driven solution for all stakeholders.",
+    description: `Scriptopia Campus is an institution-first placement management system that brings digital transformation to the campus hiring ecosystem. Designed for colleges, universities, and placement cells, it serves as a centralized hub where students, recruiters, and faculty coordinators interact seamlessly to manage the end-to-end placement lifecycle — from resume submissions and assessments to interview scheduling and final offer rollouts.`,
+    problem: `Campus placement processes are often fragmented across spreadsheets, emails, WhatsApp groups, and offline assessments — leading to miscommunication, scheduling conflicts, and lack of data visibility. Institutions needed a tech-enabled, real-time solution to manage bulk student data, company coordination, and placement reporting with minimal manual overhead.`,
+    solution: `Scriptopia Campus provides a complete digital solution for all stakeholders in the campus recruitment process. Students get a personalized dashboard to update their profiles, view eligible job postings, submit applications, take assessments, and track interview progress. Placement officers can manage student databases, publish drives, schedule events, and generate reports with a few clicks. Recruiters have their own interface to post job requirements, view candidate applications, conduct assessments, and track interview performance. The platform also integrates directly with Scriptopia Enterprise for seamless technical evaluations. Features like calendar-based event scheduling, role-based access, CSV data import/export, and real-time analytics make it a comprehensive tool for academic institutions.`,
+    highlights: [
+      "Automates the entire campus placement process from registration to offers",
+      "Separate dashboards for students, placement officers, and recruiters",
+      "Drive and event scheduling with calendar-based tools",
+      "Bulk student data management via CSV import/export",
+      "Resume parsing and profile enrichment capabilities",
+      "Real-time integration with Scriptopia Enterprise for assessments",
+      "Placement analytics with offer stats, application tracking, and reports",
+      "Built using React, Tailwind CSS, Zustand, Hono, MongoDB, Redis, Clerk, AWS",
+    ],
+    technologies: [
+      "React",
+      "ShadCN UI",
+      "NextUI",
+      "Node.js",
+      "Hono",
+      "MongoDB",
+      "AWS Lambda",
+      "DigitalOcean",
+      "Redis",
+      "Clerk",
+    ],
+    links: {
+      github: "https://github.com/annuraggg/Scriptopia-Code-2.0",
+      demo: "https://campus.scriptopia.tech",
+    },
+    development: false,
+    group: "Scriptopia Suite",
+  },
+  {
+    id: 8,
+    title: "Scriptopia Enterprise",
+    date: "2024",
+    cover: "projects/scriptopiaEnterprise/cover.png",
+    role: "Full Stack Developer",
+    timeline: "Aug 2024 - Dec 2024",
+    summary:
+      "Scriptopia Enterprise is a powerful platform built to streamline the creation, delivery, and evaluation of coding assessments for recruitment, education, and technical training. It offers real-time performance tracking, multi-language support, and a clean user interface for all stakeholders.",
+    description: `Scriptopia Enterprise is a feature-rich, full-stack platform engineered to revolutionize the way organizations hire technical talent. Built for modern recruitment teams and engineering managers, it automates technical assessments, streamlines interview workflows, and provides a secure, scalable environment to evaluate developers fairly and efficiently. The system supports multi-language coding challenges, AI-powered proctoring, and real-time analytics — making it ideal for large-scale hiring or university outreach drives.`,
+    problem: `Technical hiring is traditionally expensive, time-consuming, and difficult to scale. Recruiters struggle to assess coding skills objectively, while developers often encounter inconsistent and outdated interview experiences. The need was for a centralized, unbiased, and secure system that streamlines evaluation and supports modern hiring workflows.`,
+    solution: `Scriptopia Enterprise solves this with a robust, automated solution that offers secure, AI-assisted proctoring and real-time code evaluation. Recruiters can create assessments in multiple programming languages with customizable test cases and scoring logic. A sandboxed code execution environment compiles and evaluates code submissions instantly. To ensure test integrity, the platform includes random webcam image capture, tab switch detection, and detailed session logs. Recruiters get access to a powerful dashboard that visualizes candidate scores, attempts, and assessment health—making the selection process both transparent and efficient.`,
+    highlights: [
+      "Custom coding assessments with support for multiple languages and test cases",
+      "AI-assisted proctoring with webcam image capture and tab switch detection",
+      "Containerized real-time code execution and evaluation",
+      "Recruiter dashboard with performance analytics and candidate insights",
+      "Secure authentication using Clerk with role-based access control",
+      "Webcam captures and logs securely stored in AWS S3",
+      "Built using React, Tailwind CSS, Hono, TypeScript, MongoDB, Redis, Docker",
+      "Designed for enterprise-level hiring with automation, scalability, and integrity",
+    ],
+    technologies: [
+      "React",
+      "ShadCN UI",
+      "NextUI",
+      "Node.js",
+      "Hono",
+      "MongoDB",
+      "AWS Lambda",
+      "DigitalOcean",
+      "Redis",
+      "Clerk",
+    ],
+    links: {
+      github: "https://github.com/annuraggg/Scriptopia-Code-2.0",
+      demo: "https://enterprise.scriptopia.tech",
+    },
+    development: false,
+    group: "Scriptopia Suite",
+  },
   {
     id: 7,
     title: "Scriptopia Code",
@@ -63,6 +146,7 @@ const projects: Project[] = [
       demo: "https://www.scriptopia.tech",
     },
     development: true,
+    group: "Scriptopia Suite",
   },
   {
     id: 6,
@@ -88,7 +172,7 @@ const projects: Project[] = [
       github: "https://github.com/annuraggg/ConvoStream-API",
       demo: "https://www.npmjs.com/package/convostream",
     },
-    development: true,
+    development: false,
   },
   {
     id: 5,

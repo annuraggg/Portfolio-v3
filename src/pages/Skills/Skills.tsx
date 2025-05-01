@@ -75,6 +75,9 @@ const Skills = () => {
       progress: "https://roadmap.sh/javascript?s=646cf314cb6301e67f89a4c5",
     },
     {
+      title: "HonoJS",
+    },
+    {
       title: "Linux",
       progress: "https://roadmap.sh/linux?s=646cf314cb6301e67f89a4c5",
     },

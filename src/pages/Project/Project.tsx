@@ -3,6 +3,7 @@ import projects, { Project as ProjectType } from "../../data/projects";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { CiCoffeeCup } from "react-icons/ci";
+import Loader from "../Loader/Loader";
 
 const Project = ({
   id,
@@ -12,10 +13,12 @@ const Project = ({
   changeProject: (no: number) => void;
 }) => {
   const [project, setProject] = useState<ProjectType | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     setProject(projects.find((p) => p.id === id) || null);
+    setLoading(false);
   }, [id, setProject]);
 
   const fadeInAnimationVariants = {
@@ -31,6 +34,8 @@ const Project = ({
       },
     }),
   };
+
+  if (loading) return <Loader />;
 
   if (!project)
     return (
@@ -93,12 +98,12 @@ const Project = ({
           />
           <img
             src={project.cover}
-            className="rounded-2xl mt-20 w-[100vw] md:w-[80vw] absolute top-[-40px] blur-[500px] -z-50"
+            className="rounded-2xl mt-20 w-[100vw] md:w-[80vw] absolute top-[-40px] blur-[500px] -z-50 opacity-30"
             alt=""
           />
           <img
             src={project.cover}
-            className="rounded-2xl mt-20 w-[100vw] md:w-[80vw] absolute top-20 blur-[500px] -z-50"
+            className="rounded-2xl mt-20 w-[100vw] md:w-[80vw] absolute top-20 blur-[500px] -z-50 opacity-30"
             alt=""
           />
         </div>
