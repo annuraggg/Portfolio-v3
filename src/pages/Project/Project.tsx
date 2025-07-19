@@ -76,18 +76,25 @@ const Project = ({
         <p className="text-gray-500 mt-5">{project.date}</p>
 
         <div className="flex gap-3">
-          <p
-            className="text-gray-500 hover:text-blue-500 duration-300 transition-all cursor-pointer"
-            onClick={() => window.open(project.links?.github, "_blank")}
-          >
-            Github
-          </p>
-          <p
-            className="text-gray-500 hover:text-blue-500 duration-300 transition-all cursor-pointer"
-            onClick={() => window.open(project.links?.demo, "_blank")}
-          >
-            Demo
-          </p>
+          {project.links?.github?.map((link, index) => (
+            <p
+              className="text-gray-500 hover:text-blue-500 duration-300 transition-all cursor-pointer"
+              onClick={() => window.open(link, "_blank")}
+            >
+              {project.links?.github?.length === 1
+                ? "Github"
+                : `Github Link ${index + 1}`}
+            </p>
+          ))}
+
+          {project.links?.demo && (
+            <p
+              className="text-gray-500 hover:text-blue-500 duration-300 transition-all cursor-pointer mb-5"
+              onClick={() => window.open(project.links?.demo, "_blank")}
+            >
+              Demo
+            </p>
+          )}
         </div>
 
         <div className="relative w-[80vw] md:w-auto">
@@ -120,25 +127,31 @@ const Project = ({
               <p className="text-gray-500">{project.timeline}</p>
             </div>
 
-            <div className="mt-5">
-              <b>Github</b>
-              <p
-                className="text-gray-500 hover:text-blue-500 duration-200 transition-all cursor-pointer"
-                onClick={() => window.open(project.links?.github, "_blank")}
-              >
-                {project.links?.github}
-              </p>
-            </div>
+            {project.links?.github && (
+              <div className="mt-5">
+                <b>Github</b>
+                {project.links?.github?.map((link) => (
+                  <p
+                    className="text-gray-500 hover:text-blue-500 duration-200 transition-all cursor-pointer"
+                    onClick={() => window.open(link, "_blank")}
+                  >
+                    {link}
+                  </p>
+                ))}
+              </div>
+            )}
 
-            <div className="mt-5">
-              <b>Demo</b>
-              <p
-                className="text-gray-500 hover:text-blue-500 duration-200 transition-all cursor-pointer"
-                onClick={() => window.open(project.links?.demo, "_blank")}
-              >
-                {project.links?.demo}
-              </p>
-            </div>
+            {project.links?.demo && (
+              <div className="mt-5">
+                <b>Demo</b>
+                <p
+                  className="text-gray-500 hover:text-blue-500 duration-200 transition-all cursor-pointer"
+                  onClick={() => window.open(project.links?.demo, "_blank")}
+                >
+                  {project.links?.demo}
+                </p>
+              </div>
+            )}
           </div>
 
           <div className="md:w-[52%] mt-10 md:mt-0">

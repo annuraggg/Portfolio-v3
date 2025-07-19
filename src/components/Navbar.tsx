@@ -65,17 +65,17 @@ const Navbar = ({
   };
 
   return (
-    <div className="px-10 py-5 flex items-center justify-between md:fixed w-full z-50">
-      <div className="flex gap-2 items-center w-full">
+    <div className="px-10 py-5 flex items-center justify-between md:fixed w-full z-50 h-[84px]">
+      <div className="flex gap-2 items-center w-full mt-5">
         <img
           src="logoicon.png"
-          className="md:w-8 w-4 invert cursor-pointer mr-10"
+          className="mr-5 w-20 cursor-pointer overflow-visible"
           onClick={throwConfetti}
         />
-        <div className="hidden md:block">
+        {/* <div className="hidden md:block">
           <p className="text-lg">Anurag Sawant</p>
           <p className="text-xs text-gray-400">Full Stack Dev.</p>
-        </div>
+        </div> */}
       </div>
 
       <MiddleBar active={active} setActive={(index) => setActive(index)} />
@@ -169,7 +169,7 @@ const MiddleBar = ({
   };
 
   return (
-    <div className="h-fit md:absolute fixed bottom-2 ml-auto mr-auto left-0 right-0 w-fit z-50">
+    <div className="h-fit md:absolute fixed ml-auto mr-auto left-0 right-0 w-fit z-50">
       <div
         className={`h-full w-8 bg-white bg-opacity-25 rounded-md border-t-white border-t-[3px] transform-gpu absolute -z-10 transition-all duration-500 delay-[30ms] `}
         style={backDivStyle}

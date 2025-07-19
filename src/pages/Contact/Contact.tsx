@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
 import DiscordProfile from "./DiscordProfile";
+import "animate.css";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -10,6 +11,16 @@ const Contact = () => {
   const [message, setMessage] = useState("");
 
   const [loading, setLoading] = useState(false);
+  const [isAngry, setIsAngry] = useState(false);
+  const [hasLoaded, setHasLoaded] = useState(false);
+
+  useEffect(() => {
+    setHasLoaded(true);
+
+    setTimeout(() => {
+      setHasLoaded(false);
+    }, 1000);
+  }, []);
 
   const submit = (
     e:
@@ -33,12 +44,9 @@ const Contact = () => {
     ) {
       toast.warning("You can't pretend to be me!");
       toast.warning("YOU MADE THE WEBSITE ANGRY! 😡");
-      document
-        .getElementById("mainContact")
-        ?.classList.add("animate__animated", "animate__shakeX");
-      setTimeout(() => {
-        document.getElementById("mainContact")?.classList.add("animate-spin");
-      }, 1000);
+
+      setIsAngry(true);
+      setTimeout(() => setIsAngry(false), 1000);
       return;
     }
 
@@ -79,7 +87,9 @@ const Contact = () => {
 
   return (
     <div
-      className="md:w-auto w-[85vw] animate__animated animate__fadeIn"
+      className={`md:w-auto w-[85vw] animate__animated ${
+        hasLoaded ? "animate__fadeIn" : ""
+      } ${isAngry ? "animate__wobble" : ""}`}
       id="mainContact"
     >
       <h1 className="md:text-7xl text-center text-3xl drop-shadow-glow font-poly">
@@ -157,6 +167,9 @@ const Contact = () => {
             </button>
           </div>
         </form>
+      </div>
+      <div className="flex items-center justify-center">
+        <img src="./name.png" className="w-48 invert-[0.2]" />
       </div>
     </div>
   );

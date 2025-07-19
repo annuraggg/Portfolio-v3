@@ -5,7 +5,7 @@ import Work from "./pages/Work/Work";
 import GlowEffect from "./components/GlowEffect";
 import Footer from "./components/Footer";
 import Info from "./pages/Info/Info";
-import "animate.css";
+import 'animate.css';
 import Skills from "./pages/Skills/Skills";
 import Contact from "./pages/Contact/Contact";
 import Project from "./pages/Project/Project";
@@ -67,7 +67,7 @@ function App() {
 
             {!loading && !projectLoading && (
               <>
-                <div className="h-24"></div>
+          
                 <Footer setActive={changeTab} />
               </>
             )}
